@@ -26,6 +26,6 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/css/categoria.css" rel="stylesheet">
   </head>
   <body>
