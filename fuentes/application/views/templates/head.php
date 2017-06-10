@@ -25,7 +25,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/categoria.css" rel="stylesheet">
+    
   </head>
   <body>
