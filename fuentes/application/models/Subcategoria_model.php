@@ -1,12 +1,7 @@
 <?php
-    class subcategoria_model extends CI_model
+    class Subcategoria_model extends CI_model
     {
-        public function __construct()
-        {
-            parent::Model();
-        }
-
-        public function guardar_subcategoria($id,$subcategoria,$descripcion)
+       public function guardar_subcategoria($id,$subcategoria,$descripcion)
         {
             $data = array(
                             'cod_subcategoria' => $id,
@@ -31,7 +26,7 @@
             $this->db->delete('subcategoria');
         }
 
-        public ListarSubcategoria()
+        public function ListarSubcategoria()
         {
             $this->db->select('cod_subcategoria, subcategoria, descripcion');
             $this->db->from('subcategoria');

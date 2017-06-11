@@ -1,10 +1,6 @@
 <?php
     class marca_model extends CI_Model
     {
-        public function __construct()
-        {
-            parent::Model();
-        }
 
         public function guardar_marca($nombre_marca,$id)
         {
@@ -29,7 +25,7 @@
             $this->db->delete('marca');
         }
 
-        public ListarMarca()
+        public function ListarMarca()
         {
             $this->db->select('cod_marca, marca');
             $this->db->from('marca');

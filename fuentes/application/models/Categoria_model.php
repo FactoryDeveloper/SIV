@@ -1,11 +1,7 @@
 <?php
-    class categoria_model extends CI_Model
+    class Categoria_model extends CI_Model
     {
-        public function __construct()
-        {
-            parent::Model();
-        }
-
+       
         public function guardar_categoria($id,$categoria,$descripcion)
         {
             $data = array(
@@ -31,7 +27,7 @@
             $this->db->delete('categoria');
         }
 
-        public ListarCategoria()
+        public function ListarCategoria()
         {
             $this->db->select('cod_categoria, categoria, descripcion');
             $this->db->from('categoria');
