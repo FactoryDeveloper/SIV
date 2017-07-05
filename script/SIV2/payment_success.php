@@ -5,7 +5,7 @@
 	header('Location:index.php');
 	}
 	$uid=$_SESSION['uid'];
-	$sql="SELECT * FROM customer_order WHERE uid='$uid'";
+	$sql="SELECT * FROM orden_cliente WHERE usuario_id='$uid'";
 	$run_query=mysqli_query($conn,$sql);
 	$row=mysqli_fetch_array($run_query);
 	$trid=$row['tr_id'];

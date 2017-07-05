@@ -132,47 +132,48 @@
 	}
 
 		if(isset($_POST['addToProduct'])){
-			if(!(isset($_SESSION['uid']))){echo "
-						<div class='alert alert-danger' role='alert'>
+			if(!(isset($_SESSION['uid']))){
+				echo "
+				<div class='alert alert-danger' role='alert'>
   					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
   					<strong>Hey there!</strong> Sign in to buy stuff!
 				</div>
 					";}
 			else{
-			$pid=$_POST['proId'];
-			$uid=$_SESSION['uid'];
-			$sql = "SELECT * FROM carrito WHERE producto_id = '$pid' AND usuario_id = '$uid'";
-			$run_query=mysqli_query($conn,$sql);
-			$count=mysqli_num_rows($run_query);
-			if($count>0)
-			{
-				echo "<div class='alert alert-danger' role='alert'>
-  					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  					<strong>Success!</strong> Already added!
-				</div>";
-			}
-			else
-			{
-				$sql = "SELECT * FROM productos WHERE producto_id = '$pid'";
-				$run_query = mysqli_query($conn,$sql);
-				$row = mysqli_fetch_array($run_query);
-				$id = $row["producto_id"];
-				$pro_title = $row["producto_titulo"];
-				$pro_image = $row["producto_imagen"];
-				$pro_price = $row["producto_precio"];
-
-				
-				$sql="INSERT INTO cart(producto_id,ip,usuario_id,producto_titulo,producto_imagen,cantidad,precio,total_cantidad) VALUES('$pid','0.0.0.0','$uid','$pro_title','$pro_image','1','$pro_price','$pro_price')";
-				$run_query = mysqli_query($conn,$sql);
-				if($run_query){
-					echo "
-						<div class='alert alert-success' role='alert'>
-  					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  					<strong>Success!</strong> Product added to cart!
-				</div>
-					";
+				$pid=$_POST['proId'];
+				$uid=$_SESSION['uid'];
+				$sql = "SELECT * FROM carrito WHERE producto_id = '$pid' AND usuario_id = '$uid'";
+				$run_query=mysqli_query($conn,$sql);
+				$count=mysqli_num_rows($run_query);
+				if($count>0)
+				{
+					echo "<div class='alert alert-danger' role='alert'>
+						<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+						<strong>Success!</strong> Already added!
+					</div>";
 				}
-			}
+				else
+				{
+					$sql = "SELECT * FROM productos WHERE producto_id = '$pid'";
+					$run_query = mysqli_query($conn,$sql);
+					$row = mysqli_fetch_array($run_query);
+					$id = $row["producto_id"];
+					$pro_title = $row["producto_titulo"];
+					$pro_image = $row["producto_imagen"];
+					$pro_price = $row["producto_precio"];
+
+					
+					$sql="INSERT INTO carrito(producto_id,ip,usuario_id,producto_titulo,producto_imagen,cantidad,precio,total_cantidad) VALUES('$pid','0.0.0.0','$uid','$pro_title','$pro_image','1','$pro_price','$pro_price')";
+					$run_query = mysqli_query($conn,$sql);
+					if($run_query){
+						echo "
+							<div class='alert alert-success' role='alert'>
+						<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+						<strong>Success!</strong> Product added to cart!
+					</div>
+						";
+					}
+				}
 			}
 		}
 	

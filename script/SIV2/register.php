@@ -49,7 +49,7 @@
 		exit();
 		}
 
-		if(strlen($password) < 9 ){
+		if(strlen($password) < 6 ){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -80,7 +80,7 @@
 		}
 
 		//check for available user-details
-		$sql = "SELECT user_id FROM user_info WHERE email = '$email' LIMIT 1" ;
+		$sql = "SELECT usuario_id FROM usuarios WHERE email = '$email' LIMIT 1" ;
 		$check_query = mysqli_query($conn,$sql);
 		$count_email = mysqli_num_rows($check_query);
 
@@ -95,7 +95,7 @@
 		}
 
 		else {
-					$sql="INSERT INTO user_info (first_name, last_name, email, password, mobile, address1, address2) VALUES ('$f_name','$l_name','$email','$password','$mobile','$address1','$address2')";
+					$sql="INSERT INTO usuarios (nombres, apellidos, email, password, telefono, direccion1, direccion2) VALUES ('$f_name','$l_name','$email','$password','$mobile','$address1','$address2')";
 					$run_query=mysqli_query($conn,$sql);
 					if($run_query){
 						echo "

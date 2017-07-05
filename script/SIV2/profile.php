@@ -31,14 +31,14 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<li id='shoppingcart'><a id="carticon" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge">2</span>	</a>
-					<div class="dropdown-menu" style="width: 400px;">
+					<div class="dropdown-menu" style="width: 500px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3"><strong>S. No.</strong></div>
-									<div class="col-md-3"><strong>Product Image</strong></div>
-									<div class="col-md-3"><strong>Product Name</strong></div>
-									<div class="col-md-3"><strong>Price in $</strong></div>
+									<div class="col-md-3"><strong>Nro.</strong></div>
+									<div class="col-md-3"><strong>Imagen</strong></div>
+									<div class="col-md-3"><strong>Nombre</strong></div>
+									<div class="col-md-3"><strong>Precio</strong></div>
 								</div>
 								<hr>
 								<div id="cartmenu">
