@@ -35,10 +35,11 @@
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3">S. No.</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $</div>
+									<div class="col-md-2">Nro.</div>
+									<div class="col-md-3">Imagen</div>
+									<div class="col-md-3">Producto</div>
+									<div class="col-md-2">P. Normal</div>
+									<div class="col-md-2">P. Segunda</div>
 								</div>
 							</div>
 							<div class="panel-body"></div>
@@ -46,26 +47,32 @@
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Sign In</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Ingresar</a>
 					<ul class="dropdown-menu">
-					<div style="width: 300px;">
-						<div class="panel panel-primary">
-							<div class="panel-heading">Login</div>
-							<div class="panel-heading">
-								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email">
-								<label for="email">Password</label>
-								<input type="password" class="form-control" id="password">
-								<p><br></p>
-								<a href="#" style="color: white;list-style-type: none;">Forgot Password?</a>
-								<input type="submit" class="btn btn-success" style="float: right;bottom:12px;" id="login" value="Login" name="">
+						<div style="width: 300px;">
+							<div class="panel panel-primary">
+								<div class="panel-heading">Login</div>
+								<div class="panel-body">
+									<label for="email">Email</label>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">@</span>
+										<input type="email" class="form-control" id="email" placeholder="example@correo.com" aria-describedby="basic-addon1">
+									</div>
+									<label for="email">Password</label>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">*</span>
+										<input type="password" class="form-control" id="password" placeholder="*********" aria-describedby="basic-addon1">
+									</div>
+									<a href="#" style="color: white;list-style-type: none; display:none;">Forgot Password?</a>
+								</div>
+								<div class="panel-footer" id="e_msg">
+									<input type="submit" class="btn btn-success" id="login" value="Login" name="">
+								</div>
 							</div>
-							<div class="panel-footer" id="e_msg"></div>
 						</div>
-					</div>
-				</ul>
-				
-				<li><a href="customer_registration.php">Sign Up</a></li>
+					</ul>
+				</li>
+				<li><a href="customer_registration.php">Registrarse</a></li>
 			</ul>
 		</div>
 	</div>

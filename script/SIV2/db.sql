@@ -138,6 +138,7 @@ CREATE TABLE `productos` (
   `producto_marca` varchar(100) NOT NULL,
   `producto_titulo` varchar(50) NOT NULL,
   `producto_precio` int(100) NOT NULL,
+  `producto_precio2` int(100) NOT NULL,
   `producto_descripcion` text NOT NULL,
   `producto_imagen` text NOT NULL,
   `producto_palabraclave` text NOT NULL
@@ -147,23 +148,23 @@ CREATE TABLE `productos` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `productos` (`producto_id`, `producto_categoria`, `producto_marca`, `producto_titulo`, `producto_precio`, `producto_descripcion`, `producto_imagen`, `producto_palabraclave`) VALUES
-(1, '1', '2', 'Samsung Duos 2', 5000, 'Samsung Duos 2 mobile phone', 'samsungduos.JPG', 'samsung mobile electronics'),
-(2, '1', '3', 'iPhone 5s', 25000, 'iPhone mobile ', 'iphonemobile.JPG', 'apple iphone mobile electronics'),
-(3, '1', '3', 'iPad', 30000, 'iPad tablet for use', 'iPad.jpg', 'apple ipad tablet'),
-(4, '1', '2', 'Samsung Tab', 10000, 'samsung tablet for home use', 'samsungtab.JPG', 'samsung tablet electronics'),
-(5, '1', '4', 'Sony Vaio Laptop', 25000, 'Vaio Laptop', 'vaio.JPG', 'sony laptop vaio'),
-(6, '1', '5', 'LG Aqua 2', 15000, 'LG aqua mobile phone all featured', 'lgaqua.JPG', 'lg mobile phone aqua'),
-(7, '2', '6', 'Draped Lehenga', 1500, 'Matching Lehenga', 'lehenga.JPG', 'lehenga biba'),
-(8, '2', '6', 'SIlk Saree', 1000, 'Pure Silk Saree', 'saree.JPG', 'biba saree'),
-(9, '3', '7', 'T-Shirt', 700, 'T-Shirt for summer', 'tshirt.JPG', 'flying machine tshirt'),
-(10, '3', '7', 'FM Jeans', 1800, 'Jeans for the ones who do', 'jeans.JPG', 'flying machine jeans'),
-(11, '4', '10', 'Baby Shirt', 500, 'Shirt for the babies', 'babyshirt.JPG', 'kids shirt kidzee'),
-(12, '4', '10', 'Kids Jeans', 800, 'Jeans for kids', 'kidsjeans.JPG', 'kids jeans kidzee'),
-(13, '5', '11', 'Computer Table', 2000, 'Table for computer', 'computertable.JPG', 'computer table ikea '),
-(14, '5', '12', 'Trimmer', 1500, 'Trimmer by Philips', 'philipstrimmer.JPG', 'philips trimmer'),
-(15, '6', '8', 'Football Shoes', 2500, 'Shoes to play football by Nike', 'nikeshoes.JPG', 'nike shoes football'),
-(16, '6', '9', 'Football', 600, 'Football by Adidas', 'adidasfootball.JPG', 'football adidas');
+INSERT INTO `productos` (`producto_id`, `producto_categoria`, `producto_marca`, `producto_titulo`, `producto_precio`,`producto_precio2`, `producto_descripcion`, `producto_imagen`, `producto_palabraclave`) VALUES
+(1, '1', '2', 'Samsung Duos 2', 5000, 2500, 'Samsung Duos 2 mobile phone', 'samsungduos.JPG', 'samsung mobile electronics'),
+(2, '1', '3', 'iPhone 5s', 2500, 1250, 'iPhone mobile ', 'iphonemobile.JPG', 'apple iphone mobile electronics'),
+(3, '1', '3', 'iPad', 3000, 1500, 'iPad tablet for use', 'iPad.jpg', 'apple ipad tablet'),
+(4, '1', '2', 'Samsung Tab', 1000, 500, 'samsung tablet for home use', 'samsungtab.JPG', 'samsung tablet electronics'),
+(5, '1', '4', 'Sony Vaio Laptop', 2500, 1250, 'Vaio Laptop', 'vaio.JPG', 'sony laptop vaio'),
+(6, '1', '5', 'LG Aqua 2', 1500, 750, 'LG aqua mobile phone all featured', 'lgaqua.JPG', 'lg mobile phone aqua'),
+(7, '2', '6', 'Draped Lehenga', 1500, 750, 'Matching Lehenga', 'lehenga.JPG', 'lehenga biba'),
+(8, '2', '6', 'SIlk Saree', 1000, 500, 'Pure Silk Saree', 'saree.JPG', 'biba saree'),
+(9, '3', '7', 'T-Shirt', 700, 350, 'T-Shirt for summer', 'tshirt.JPG', 'flying machine tshirt'),
+(10, '3', '7', 'FM Jeans', 1800, 900, 'Jeans for the ones who do', 'jeans.JPG', 'flying machine jeans'),
+(11, '4', '10', 'Baby Shirt', 500, 250, 'Shirt for the babies', 'babyshirt.JPG', 'kids shirt kidzee'),
+(12, '4', '10', 'Kids Jeans', 800, 400, 'Jeans for kids', 'kidsjeans.JPG', 'kids jeans kidzee'),
+(13, '5', '11', 'Computer Table', 2000, 1000, 'Table for computer', 'computertable.JPG', 'computer table ikea '),
+(14, '5', '12', 'Trimmer', 1500, 750, 'Trimmer by Philips', 'philipstrimmer.JPG', 'philips trimmer'),
+(15, '6', '8', 'Football Shoes', 2500, 1250, 'Shoes to play football by Nike', 'nikeshoes.JPG', 'nike shoes football'),
+(16, '6', '9', 'Football', 600, 300, 'Football by Adidas', 'adidasfootball.JPG', 'football adidas');
 
 -- --------------------------------------------------------
 
@@ -200,11 +201,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario_id`, `nombres`, `apellidos`, `email`, `password`, `telefono`, `direccion1`, `direccion2`) VALUES
-(1, 'Satyam', 'Raj', 'satyammast@gmail.com', '3814d460c26c2dbab2d80294d2cc9882', '8235639917', 'Prem Electronics Block Road Ratu', 'Prem Electronics Block Road Ratu'),
-(2, 'Abhijeet', 'Kumar', 'abhinav@krotos.com', '6cebe3b43c4495fdf87fcaa43b485236', '7631649503', 'West Lohanipur, Kadamkuan, MNS Lane', 'Patna'),
-(3, 'Krotos', 'Kumar', 'kroto@star.com', 'e3daab6a6b16a140aaf0f1df98d3be24', '7631649503', 'West Lohanipur, Kadamkuan, MNS Lane', 'Patna'),
-(4, 'Pranav', 'Prem', 'pranav.prem@gmail.com', '929847725b8d48b47ecba736b0d04520', '8235639917', 'Prem Electronics Block Road Ratu', 'sdsd'),
-(5, 'Shubham', 'Raj', 'shubham@gmail.com', '5568fda880263b9be0b72104354fa3dc', '8235639917', 'Prem Electronics Block Road Ratu', 'bangalore');
+(1, 'Cesar', 'Medina', 'cmedinavera@gmail.com', 'fc9ab88a31718b303e63962bd78e3af5', '9900096980', 'av', 'av');
 
 --
 -- Indexes for dumped tables

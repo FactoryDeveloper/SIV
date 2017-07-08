@@ -9,7 +9,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Amaclone</title>
+	<title>VENTAS CON CARRITO DE COMPRAS</title>
 	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.6-dist/css/bootstrap.css">
@@ -20,11 +20,10 @@
 	<div class="navbar navbar-default navbar-fixed-top"  id="topnav">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="index.php" class="navbar-brand">Amaclone</a>
+				<a href="index.php" class="navbar-brand">VENTAS CON CARRITO DE COMPRAS</a>
 			</div>
 
 			<ul class="nav navbar-nav">
-			
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search" name=""></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn" name=""><span class='glyphicon glyphicon-search'></span></button></li>
 			</ul>
@@ -35,20 +34,14 @@
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3"><strong>Nro.</strong></div>
+									<div class="col-md-2"><strong>Nro.</strong></div>
 									<div class="col-md-3"><strong>Imagen</strong></div>
 									<div class="col-md-3"><strong>Nombre</strong></div>
-									<div class="col-md-3"><strong>Precio</strong></div>
+									<div class="col-md-2"><strong>P. Normal</strong></div>
+									<div class="col-md-2"><strong>P. Segunda</strong></div>
 								</div>
 								<hr>
-								<div id="cartmenu">
-								<!--<div class="row">
-									<div class="col-md-3">S. No.</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $</div>
-								</div>-->
-								</div>
+								<div id="cartmenu"></div>
 							</div>
 							<div class="panel-body"></div>
 							<div class="panel-footer"></div>
@@ -58,7 +51,7 @@
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Hello, <?php echo $_SESSION['uname']; ?></a>
 				<ul class="dropdown-menu">
 					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart-large"></span> Cart</a></li>
-					<li><a href="#">Change Password</a></li>
+					<li><a href="#" class="hidden">Change Password</a></li>
 					<li><a href="logout.php">Logout</a></li>
 				</ul>
 
@@ -111,9 +104,9 @@
 					</div>
 				</div>
 				<div class="panel panel-info">
-					<div class="panel-heading text-center">--Featured Products--
+					<div class="panel-heading text-center">--Productos Destacados--
 							<div class='pull-right'>
-								Sort: &nbsp;&nbsp;&nbsp;<a href="#" id='price_sort'>Price</a> | <a href="#" id='pop_sort'>Popularity</a>
+								Ordenar: &nbsp;&nbsp;&nbsp;<a href="#" id='price_sort'>Precio</a> | <a href="#" id='pop_sort'>Popularidad</a>
 							</div>
 					</div>
 					<div class="panel-body">
@@ -150,13 +143,13 @@
 				    <div class="modal-content">
 				      <div class="modal-header">
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Product Details</h4>
+				        <h4 class="modal-title" id="myModalLabel">Detalle Producto</h4>
 				      </div>
 				      <div class="modal-body" id='dynamic_content'>
 				        ...
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				        
 				      </div>
 				    </div>

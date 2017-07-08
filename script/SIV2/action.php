@@ -68,6 +68,7 @@
 				$brand=$row['producto_marca'];
 				$title=$row['producto_titulo'];
 				$price=$row['producto_precio'];
+				$price2=$row['producto_precio2'];
 				$img=$row['producto_imagen'];
 
 				echo "<div class='col-md-4'>
@@ -78,11 +79,16 @@
 									<img src='assets/prod_images/$img' style='width:200px; height:250px;' >
 								</a>
 								</div>
-								<div class='panel-heading'>Rs $price
-								<button pid='$pro_id' class='quicklook btn btn-danger btn-xs' style='float:right;'>Preview</button>&nbsp;
-								<button pid='$pro_id' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carito</button>
+								<div class='panel-heading'> 
+									<button pid='$pro_id' class='quicklook btn btn-danger btn-xs' style='float:right;'>Preview</button>&nbsp;
+									<button pid='$pro_id' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carito</button>
 								</div>
-							</div></div>";
+								<div class='panel-body'>
+									<div class='pull-left'>P. Normal: $price</div>
+									<div class='pull-right'>P. Segunda: $price2</div>
+								</div>
+							</div>
+					</div>";
 			}
 		}
 	}
@@ -114,16 +120,20 @@
 				$brand=$row['producto_marca'];
 				$title=$row['producto_titulo'];
 				$price=$row['producto_precio'];
+				$price2=$row['producto_precio2'];
 				$img=$row['producto_imagen'];
 
 				echo "<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$title</div>
 								<div class='panel-body' class='imageproduct' pid='$pro_id'><img src='assets/prod_images/$img' style='width:200px; height:250px;'></div>
-								<div class='panel-heading'>Rs $price
-								<button pid='$pro_id' class='quicklook btn btn-warning btn-xs' style='float:right;'>Preview</button>&nbsp;
-								<button pid='$pro_id' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carrito</button>
-								
+								<div class='panel-heading'>
+									<button pid='$pro_id' class='quicklook btn btn-warning btn-xs' style='float:right;'>Preview</button>&nbsp;
+									<button pid='$pro_id' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carrito</button>
+								</div>
+								<div class='panel-body'>
+									<div class='pull-left'>P. Normal: $price</div>
+									<div class='pull-right'>P. Segunda: $price2</div>
 								</div>
 							</div></div>";
 		}
@@ -207,7 +217,7 @@
 									<div class='col-md-3'>$sl</div>
 									<div class='col-md-3'><img src='assets/prod_images/$product_image' width='60px' height='60px'></div>
 									<div class='col-md-3'>$product_title</div>
-									<div class='col-md-3'>Rs $product_price</div>
+									<div class='col-md-3'>$product_price</div>
 				</div>
 			";
 			}
