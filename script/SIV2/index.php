@@ -36,10 +36,9 @@
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-md-2">Nro.</div>
-									<div class="col-md-3">Imagen</div>
-									<div class="col-md-3">Producto</div>
-									<div class="col-md-2">P. Normal</div>
-									<div class="col-md-2">P. Segunda</div>
+									<div class="col-md-4">Imagen</div>
+									<div class="col-md-4">Producto</div>
+									<div class="col-md-2">Precio</div>
 								</div>
 							</div>
 							<div class="panel-body"></div>

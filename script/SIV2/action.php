@@ -75,17 +75,24 @@
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$title</div>
 								<div class='panel-body'>
-								<a href='#' class='imageproduct' pid='$pro_id'>
-									<img src='assets/prod_images/$img' style='width:200px; height:250px;' >
-								</a>
+								<center>
+									<a href='#' class='imageproduct' pid='$pro_id'>
+										<img src='assets/prod_images/$img' style='width:200px; height:250px;' >
+									</a>
+								</center>
 								</div>
-								<div class='panel-heading'> 
-									<button pid='$pro_id' class='quicklook btn btn-danger btn-xs' style='float:right;'>Preview</button>&nbsp;
-									<button pid='$pro_id' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carito</button>
-								</div>
-								<div class='panel-body'>
-									<div class='pull-left'>P. Normal: $price</div>
-									<div class='pull-right'>P. Segunda: $price2</div>
+								<div class='panel-footer' style='padding: 5px 15px 0px 15px;'>
+									<div class='row' style='padding: 2px;'>
+										<div class='pull-left text-primary'>P. Normal: $price</div>
+										<button pid='$pro_id' ptipo='N' class='product btn btn-primary btn-xs' style='float:right;'>Agregar Carito</button>
+									</div>
+									<div class='row' style='padding: 2px;'>
+										<div class='pull-left text-danger'>P. Segunda: $price2</div>
+										<button pid='$pro_id' ptipo='S' class='product btn btn-danger btn-xs' style='float:right;'>Agregar Carito</button>
+									</div>
+									<div class='row' style='padding: 2px;'>
+										<button pid='$pro_id' class='quicklook btn btn-info btn-xs' style='float:right;'>Preview</button>&nbsp;
+									</div>
 								</div>
 							</div>
 					</div>";
@@ -151,6 +158,7 @@
 					";}
 			else{
 				$pid=$_POST['proId'];
+				$protp=$_POST['proTp'];
 				$uid=$_SESSION['uid'];
 				$sql = "SELECT * FROM carrito WHERE producto_id = '$pid' AND usuario_id = '$uid'";
 				$run_query=mysqli_query($conn,$sql);
@@ -170,9 +178,11 @@
 					$id = $row["producto_id"];
 					$pro_title = $row["producto_titulo"];
 					$pro_image = $row["producto_imagen"];
-					$pro_price = $row["producto_precio"];
-
-					
+					if($protp == "N"){
+						$pro_price = $row["producto_precio"];
+					}else{
+						$pro_price = $row["producto_precio2"];	
+					}
 					$sql="INSERT INTO carrito(producto_id,ip,usuario_id,producto_titulo,producto_imagen,cantidad,precio,total_cantidad) VALUES('$pid','0.0.0.0','$uid','$pro_title','$pro_image','1','$pro_price','$pro_price')";
 					$run_query = mysqli_query($conn,$sql);
 					if($run_query){
@@ -326,6 +336,7 @@
 		$image=$row['producto_imagen'];
 		$title=$row['producto_titulo'];
 		$price=$row['producto_precio'];
+		$price2=$row['producto_precio2'];
 		$desc=$row['producto_descripcion'];
 		$tags=$row['producto_palabraclave'];
 
@@ -336,9 +347,10 @@
 					</div>
 					<div class='col-md-6'>
 						<div class='row'> <div class='col-md-12'><h1>$title</h1></div></div>
-						<div class='row'> <div class='col-md-12'>Price:<h3 class='text-muted'>$price</h3></div></div>
-						<div class='row'> <div class='col-md-12'>Description:<h4 class='text-muted'>$desc</h4></div></div><br><br>
-						<div class='row'> <div class='col-md-12'>Tags:<h4 class='text-muted'>$tags</h4></div></div>
+						<div class='row'> <div class='col-md-12'>P. Normal:<h3 class='text-muted'>$price</h3></div></div>
+						<div class='row'> <div class='col-md-12'>P. Segunda:<h3 class='text-muted'>$price2</h3></div></div>
+						<div class='row'> <div class='col-md-12'>Descripciòn:<h4 class='text-muted'>$desc</h4></div></div><br><br>
+						<div class='row'> <div class='col-md-12'>Etiquetas:<h4 class='text-muted'>$tags</h4></div></div>
 						<button pid='$pro_id' class='product btn btn-danger'>Agregar Carrito</button>
 					</div>
 				</div>

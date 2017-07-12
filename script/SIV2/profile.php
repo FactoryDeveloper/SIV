@@ -35,10 +35,9 @@
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-md-2"><strong>Nro.</strong></div>
-									<div class="col-md-3"><strong>Imagen</strong></div>
-									<div class="col-md-3"><strong>Nombre</strong></div>
-									<div class="col-md-2"><strong>P. Normal</strong></div>
-									<div class="col-md-2"><strong>P. Segunda</strong></div>
+									<div class="col-md-4"><strong>Imagen</strong></div>
+									<div class="col-md-4"><strong>Nombre</strong></div>
+									<div class="col-md-2"><strong>Precio</strong></div>
 								</div>
 								<hr>
 								<div id="cartmenu"></div>
@@ -111,15 +110,6 @@
 					</div>
 					<div class="panel-body">
 					<div id="get_product"></div>
-						<!--<div class="col-md-4">
-							<div class="panel panel-info">
-								<div class="panel-heading">Samsung Galaxy</div>
-								<div class="panel-body"><img src="assets/prod_images/samsung_galaxy.jpg"></div>
-								<div class="panel-heading">$500.00
-								<button class="btn btn-danger btn-xs" style="float:right;">Add to Cart</button>
-								</div>
-							</div>
-						</div>-->
 					</div>
 					<div class="panel-footer">&copy; 2017</div>
 				</div>

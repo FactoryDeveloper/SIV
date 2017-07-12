@@ -66,6 +66,7 @@ CREATE TABLE `carrito` (
   `producto_imagen` varchar(300) NOT NULL,
   `cantidad` int(100) NOT NULL,
   `precio` int(100) NOT NULL,
+  `precio` int(100) NOT NULL,
   `total_cantidad` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

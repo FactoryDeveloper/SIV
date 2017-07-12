@@ -158,13 +158,14 @@ $(document).ready(function () {
 
 	$('body').delegate('.product', 'click', function () {
 		var product_id = $(this).attr('pid');
-		console.log(product_id);
+		var product_tp = $(this).attr('ptipo');
 		$.ajax({
 			url: "action.php",
 			method: "POST",
 			data: {
 				addToProduct: 1,
-				proId: product_id
+				proId: product_id,
+				proTp: product_tp
 			},
 			success: function (data) {
 				$('#cartmsg').html(data);
