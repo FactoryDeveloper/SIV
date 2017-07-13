@@ -1,6 +1,9 @@
 <?php 
 	session_start();
 	include('dbconnect.php');
+	require 'PHPMailer/PHPMailerAutoload.php';
+
+
 	if(isset($_POST["category"])){
 		$categoria_query="SELECT * FROM categorias";
 		$run_query=mysqli_query($conn,$categoria_query);
@@ -153,7 +156,7 @@
 				echo "
 				<div class='alert alert-danger' role='alert'>
   					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  					<strong>Hey there!</strong> Sign in to buy stuff!
+  					<strong>¡Hey!</strong> ¡Inicia sesión para comprar cosas!
 				</div>
 					";}
 			else{
@@ -167,7 +170,7 @@
 				{
 					echo "<div class='alert alert-danger' role='alert'>
 						<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-						<strong>Success!</strong> Already added!
+						<strong>Éxito!</strong> Se agrego!
 					</div>";
 				}
 				else
@@ -189,7 +192,7 @@
 						echo "
 							<div class='alert alert-success' role='alert'>
 						<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-						<strong>Success!</strong> Product added to cart!
+						<strong>Éxito!</strong> Producto agregado a tu carrito!
 					</div>
 						";
 					}
@@ -270,7 +273,7 @@
 			echo "
 				<div class='alert alert-danger' role='alert'>
   					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  					<strong>Success!</strong> Item removed from cart!
+  					<strong>Éxito!</strong> Artículo eliminado del carrito!
 				</div>
 			";
 		}	
@@ -289,7 +292,7 @@
 			echo "
 				<div class='alert alert-success' role='alert'>
   					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  					<strong>Success!</strong> Item updated!
+  					<strong>Éxito!</strong> Articulo actualizado!
 				</div>
 			";
 		}
@@ -323,6 +326,32 @@
 			$run_query2=mysqli_query($conn,$sql2);
 		}
 		$i++;
+		$mail = new PHPMailer;
+		//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+		$mail->isSMTP();                                      // Set mailer to use SMTP
+		$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+		$mail->Username = 'cmedinavera@gmail.com';                 // SMTP username
+		$mail->Password = '"violineitor_1"';                           // SMTP password
+		$mail->SMTPAuth = true;                               // Enable SMTP authentication
+		$mail­->SMTPSecure = "tls";                          // Enable TLS encryption, `ssl` also accepted
+		$mail->Port = 465;                                    // TCP port to connect to
+
+		$mail->setFrom('cmedinavera@gmail.com', 'Mailer');
+		$mail->addAddress('cmedinavera@gmail.com', 'Joe User');     // Add a recipient
+		$mail->addReplyTo('cmedinavera@gmail.com', 'Information');
+
+		$mail->isHTML(true);                                  // Set email format to HTML
+		$mail->Subject = 'Here is the subject';
+		$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+		$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+		if(!$mail->send()) {
+			echo 'Message could not be sent.';
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+			echo 'Message has been sent';
+		}
+
 		$sql3="DELETE FROM carrito WHERE usuario_id='$uid'";
 		$run_query3=mysqli_query($conn,$sql3);
 	}

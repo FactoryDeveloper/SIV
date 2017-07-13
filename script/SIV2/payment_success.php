@@ -15,7 +15,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Amaclone</title>
+	<title>VENTAS CON CARRITO DE COMPRAS</title>
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.6-dist/css/bootstrap.css">
 	<style type="text/css">
 		.content{
@@ -28,7 +28,7 @@
 		<div class="navbar navbar-default navbar-fixed-top" id="topnav">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="index.php" class="navbar-brand">Amaclone</a>
+				<a href="index.php" class="navbar-brand">VENTAS CON CARRITO DE COMPRAS</a>
 			</div>
 
 			
@@ -42,11 +42,11 @@
 			<div class="panel panel-default">
   				<div class="panel-heading"><h1>Thank you!</h1></div>
   				<div class="panel-body">
-    				Hello <?php echo $_SESSION['uname']; ?>, your payment is successful.
-    				<br>Your Transaction ID is <?php echo $trid; ?> 
-    				<br>You can continue with your shopping.
+    				Hola <?php echo $_SESSION['uname']; ?>, Su pago es exitoso.
+    				<br>Su ID de transacción es <?php echo $trid; ?> 
+    				<br>Puedes continuar con tus compras.
     				<p></p>
-    				<a href="profile.php" class='btn btn-success btn-lg'>Back to store</a>
+    				<a href="profile.php" class='btn btn-success btn-lg'>Volver a la tienda</a>
   				</div>
 			</div>
 		<div class='col-md-2'></div>

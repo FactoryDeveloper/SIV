@@ -47,9 +47,9 @@
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Hello, <?php echo $_SESSION['uname']; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Holla, <?php echo $_SESSION['uname']; ?></a>
 				<ul class="dropdown-menu">
-					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart-large"></span> Cart</a></li>
+					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart-large"></span> Carrito</a></li>
 					<li><a href="#" class="hidden">Change Password</a></li>
 					<li><a href="logout.php">Logout</a></li>
 				</ul>

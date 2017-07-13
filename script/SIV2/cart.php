@@ -33,7 +33,7 @@
 				<div class="col-md-12" id="cart_msg"></div>
 			</div>
 				<div class="panel panel-primary text-center">
-					<div class="panel-heading">Cart Checkout</div>
+					<div class="panel-heading">Carrito de la compra</div>
 					<div class="panel-body"></div>
 					<div class="row">
 						<div class="col-md-2"><b>Acción</b></div>
@@ -47,7 +47,7 @@
 					<div id='cartdetail'></div>
 					<div class="panel-footer"></div>
 				</div>
-				<button class='btn btn-success btn-lg pull-right' id='checkout_btn' data-toggle="modal" data-target="#myModal">Checkout</button>
+				<button class='btn btn-success btn-lg pull-right' id='checkout_btn' data-toggle="modal" data-target="#myModal">Comprar</button>
 			</div>
 
 			<div class="col-md-2"></div>
